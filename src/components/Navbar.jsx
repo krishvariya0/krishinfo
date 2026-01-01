@@ -79,22 +79,21 @@ const Navbar = () => {
 
       {/* Mobile Bottom Navigation */}
       <nav 
-        className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-t border-border"
+        className="md:hidden fixed bottom-0 left-0 right-0 z-[9999] bg-background border-t border-border"
         style={{ 
-          paddingBottom: 'env(safe-area-inset-bottom, 0px)',
-          transform: 'none',
-          willChange: 'auto'
+          paddingBottom: 'env(safe-area-inset-bottom, 8px)',
+          transform: 'translateZ(0)',
+          isolation: 'isolate'
         }}
-        data-lenis-prevent
       >
-        <div className="flex items-center justify-around h-16 px-2">
+        <div className="flex items-center justify-around h-14 px-2 bg-background">
           {mobileNavItems.map((item, index) => {
             const Icon = item.icon;
             return (
               <a
                 key={index}
                 href={item.href}
-                className="flex flex-col items-center justify-center gap-1 p-2 text-muted-foreground hover:text-primary transition-colors duration-300"
+                className="flex flex-col items-center justify-center gap-0.5 p-2 text-muted-foreground hover:text-primary transition-colors duration-300"
               >
                 <Icon className="h-5 w-5" />
                 <span className="text-[10px] font-medium">{item.label}</span>
