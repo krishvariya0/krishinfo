@@ -46,27 +46,27 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 relative bg-secondary/20">
+    <section id="skills" className="py-16 sm:py-20 lg:py-24 relative bg-secondary/20">
       <div className="section-container">
         {/* Section Header */}
-        <FadeIn className="text-center mb-16">
-          <span className="text-primary font-mono text-sm mb-4 block">02. Skills</span>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+        <FadeIn className="text-center mb-10 sm:mb-12 lg:mb-16">
+          <span className="text-primary font-mono text-xs sm:text-sm mb-3 sm:mb-4 block">02. Skills</span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
             Technologies I <span className="text-gradient">Work With</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
             I specialize in modern web development technologies and continuously expand my toolkit
           </p>
         </FadeIn>
 
         {/* Skills Grid */}
-        <div className="space-y-12">
+        <div className="space-y-8 sm:space-y-10 lg:space-y-12">
           {skillCategories.map((category, categoryIndex) => (
             <FadeIn key={categoryIndex} delay={categoryIndex * 0.1}>
-              <h3 className="text-xl font-semibold mb-6 text-center lg:text-left">
+              <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-center lg:text-left">
                 {category.title}
               </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2 sm:gap-3 md:gap-4">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skillIndex}
@@ -75,13 +75,13 @@ const Skills = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: skillIndex * 0.05 }}
                     whileHover={{ y: -5, scale: 1.02 }}
-                    className="card-glass p-4 flex flex-col items-center gap-3 cursor-default"
+                    className="card-glass p-3 sm:p-4 flex flex-col items-center gap-2 sm:gap-3 cursor-default"
                   >
                     <skill.icon 
-                      className="h-8 w-8 transition-transform duration-300"
+                      className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 transition-transform duration-300"
                       style={{ color: skill.color }}
                     />
-                    <span className="text-sm font-medium text-center">{skill.name}</span>
+                    <span className="text-xs sm:text-sm font-medium text-center leading-tight">{skill.name}</span>
                   </motion.div>
                 ))}
               </div>
