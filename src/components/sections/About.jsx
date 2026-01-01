@@ -1,5 +1,5 @@
 import { Code, Rocket, Target } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/motion";
+import { FadeIn, StaggerContainer, StaggerItem, motion, lenisEasing } from "@/components/ui/motion";
 
 const About = () => {
   const highlights = [
@@ -49,9 +49,13 @@ const About = () => {
           <StaggerContainer className="grid gap-4 sm:gap-6">
             {highlights.map((item, index) => (
               <StaggerItem key={index}>
-                <div className="card-glass p-4 sm:p-6 hover-lift group">
+                <motion.div 
+                  className="card-glass p-4 sm:p-6 group cursor-default"
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  transition={{ duration: 0.4, ease: lenisEasing }}
+                >
                   <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="p-2 sm:p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                    <div className="p-2 sm:p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
                       <item.icon className="h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
                     <div>
@@ -59,7 +63,7 @@ const About = () => {
                       <p className="text-sm sm:text-base text-muted-foreground">{item.description}</p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </StaggerItem>
             ))}
           </StaggerContainer>
