@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import { useLenis } from "@/hooks/useLenis";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
@@ -10,8 +9,6 @@ import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 
 const Index = () => {
-  useLenis();
-
   return (
     <>
       <Helmet>

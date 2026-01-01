@@ -1,7 +1,14 @@
+import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Home, User, Code, FolderKanban, Mail } from "lucide-react";
 
 const MobileNav = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const mobileNavItems = [
     { label: "Home", href: "#hero", icon: Home },
     { label: "About", href: "#about", icon: User },
@@ -36,12 +43,12 @@ const MobileNav = () => {
     </nav>
   );
 
-  // Use portal to render outside of any parent transforms/overflows
-  if (typeof document !== 'undefined') {
+  // Only use portal after component is mounted
+  if (mounted) {
     return createPortal(navContent, document.body);
   }
 
-  return navContent;
+  return null;
 };
 
 export default MobileNav;
