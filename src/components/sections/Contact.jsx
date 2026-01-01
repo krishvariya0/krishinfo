@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Download, Github, Linkedin, Mail, MapPin, Send } from "lucide-react";
+import { Download, Github, Instagram, Linkedin, Mail, MapPin, Send } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem, motion } from "@/components/ui/motion";
 
 const Contact = () => {
@@ -21,6 +21,12 @@ const Contact = () => {
       label: "GitHub",
       value: "github.com/krishvariya0",
       href: "https://github.com/krishvariya0",
+    },
+    {
+      icon: Instagram,
+      label: "Instagram",
+      value: "instagram.com/krxsh.in",
+      href: "https://www.instagram.com/krxsh.in/",
     },
     {
       icon: MapPin,
