@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import LoadingScreen from "@/components/LoadingScreen";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
@@ -9,6 +11,8 @@ import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 
 const Index = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <>
       <Helmet>
@@ -41,6 +45,9 @@ const Index = () => {
           content="Building modern, responsive & real-world web applications using React & Next.js"
         />
       </Helmet>
+
+      {/* Loading Screen */}
+      <LoadingScreen onComplete={() => setIsLoading(false)} />
 
       <main className="min-h-screen bg-background">
         <Navbar />
