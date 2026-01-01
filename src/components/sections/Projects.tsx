@@ -105,14 +105,14 @@ const Projects = () => {
                     </div>
 
                     {/* Buttons */}
-                    <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 pt-2">
-                      <Button variant="outline" size="default" className="w-full xs:w-auto" asChild>
+                    <div className="flex flex-row gap-3 sm:gap-4 pt-2">
+                      <Button variant="outline" size="default" className="flex-1 sm:flex-none" asChild>
                         <a href={project.github} target="_blank" rel="noopener noreferrer">
                           <Github className="mr-2 h-4 w-4" />
                           GitHub
                         </a>
                       </Button>
-                      <Button variant="hero" size="default" className="w-full xs:w-auto" asChild>
+                      <Button variant="hero" size="default" className="flex-1 sm:flex-none" asChild>
                         <a href={project.live} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="mr-2 h-4 w-4" />
                           Live Demo
