@@ -70,10 +70,10 @@ const LoadingScreen = ({ onComplete }) => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4, ease: smoothEase }}
         >
-          <div className="text-center px-4 w-full max-w-full overflow-hidden">
+          <div className="text-center px-4 w-full">
             {/* Name with typing effect */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-tight mb-3 sm:mb-4 md:mb-6 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-3 md:gap-4">
-              <span className="text-foreground whitespace-nowrap">
+            <h1 className="text-[7vw] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-tight mb-3 sm:mb-4 md:mb-6 whitespace-nowrap">
+              <span className="text-foreground">
                 {firstName.split("").map((char, index) => (
                   <motion.span
                     key={index}
@@ -88,7 +88,9 @@ const LoadingScreen = ({ onComplete }) => {
                 ))}
               </span>
               
-              <span className="text-gradient whitespace-nowrap">
+              <span className="inline-block w-[2vw] sm:w-3 md:w-4"></span>
+              
+              <span className="text-gradient">
                 {lastName.split("").map((char, index) => (
                   <motion.span
                     key={index}
@@ -101,15 +103,16 @@ const LoadingScreen = ({ onComplete }) => {
                     {char}
                   </motion.span>
                 ))}
-                {/* Blinking cursor */}
-                <motion.span
-                  className="text-primary ml-1"
-                  animate={{ opacity: showCursor ? 1 : 0 }}
-                  transition={{ duration: 0.05 }}
-                >
-                  |
-                </motion.span>
               </span>
+
+              {/* Blinking cursor */}
+              <motion.span
+                className="text-primary ml-1"
+                animate={{ opacity: showCursor ? 1 : 0 }}
+                transition={{ duration: 0.05 }}
+              >
+                |
+              </motion.span>
             </h1>
 
             {/* Role */}
