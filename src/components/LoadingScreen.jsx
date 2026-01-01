@@ -26,7 +26,7 @@ const LoadingScreen = ({ onComplete }) => {
   const firstName = "Krish";
   const lastName = "Variya";
 
-  // Simple, smooth easing
+  // Smooth easing
   const smoothEase = [0.25, 0.1, 0.25, 1];
 
   const letterVariants = {
@@ -65,14 +65,40 @@ const LoadingScreen = ({ onComplete }) => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="fixed inset-0 z-[999999] bg-background flex items-center justify-center"
+          className="fixed inset-0 z-[999999] flex items-center justify-center overflow-hidden"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: smoothEase }}
         >
-          <div className="text-center px-4 w-full max-w-[95vw] sm:max-w-none">
+          {/* Background gradient - matching hero section */}
+          <div 
+            className="absolute inset-0"
+            style={{ background: 'radial-gradient(ellipse at top, hsl(220 10% 12%), hsl(220 10% 4%))' }}
+          />
+          
+          {/* Subtle grid pattern */}
+          <motion.div 
+            className="absolute inset-0 opacity-[0.03]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.03 }}
+            transition={{ duration: 1 }}
+            style={{
+              backgroundImage: `linear-gradient(hsl(0 0% 100%) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100%) 1px, transparent 1px)`,
+              backgroundSize: '40px 40px'
+            }}
+          />
+
+          {/* Floating orb - matching hero section */}
+          <motion.div 
+            className="absolute top-1/4 right-1/4 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-primary/10 rounded-full blur-3xl"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.5, ease: smoothEase }}
+          />
+
+          <div className="text-center px-4 w-full max-w-[95vw] sm:max-w-none relative z-10">
             {/* Name with typing effect */}
-            <h1 className="text-[clamp(1.75rem,8vw,6rem)] font-bold tracking-tight leading-tight">
+            <h1 className="text-[clamp(1.75rem,8vw,6rem)] font-bold tracking-tight leading-tight mb-4 sm:mb-6">
               <span className="inline-flex text-foreground flex-wrap justify-center">
                 {firstName.split("").map((char, index) => (
                   <motion.span
@@ -115,6 +141,16 @@ const LoadingScreen = ({ onComplete }) => {
                 |
               </motion.span>
             </h1>
+
+            {/* Role - matching hero section style */}
+            <motion.p 
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-mono"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.8, ease: smoothEase }}
+            >
+              Frontend / Full-Stack Developer
+            </motion.p>
           </div>
         </motion.div>
       )}

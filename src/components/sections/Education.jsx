@@ -1,5 +1,5 @@
 import { GraduationCap, Calendar, MapPin } from "lucide-react";
-import { FadeIn, motion, lenisEasing } from "@/components/ui/motion";
+import { FadeIn, motion, smoothEase } from "@/components/ui/motion";
 
 const Education = () => {
   return (
@@ -14,21 +14,21 @@ const Education = () => {
         </FadeIn>
 
         {/* Education Card */}
-        <FadeIn delay={0.2}>
+        <FadeIn delay={0.15}>
           <div className="max-w-3xl mx-auto">
             <motion.div 
               className="card-glass p-4 sm:p-6 lg:p-8"
-              whileHover={{ y: -8, scale: 1.02 }}
-              transition={{ duration: 0.5, ease: lenisEasing }}
+              whileHover={{ y: -5, scale: 1.01 }}
+              transition={{ duration: 0.3 }}
             >
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                 {/* Icon */}
                 <motion.div 
                   className="flex-shrink-0"
-                  initial={{ scale: 0.5, opacity: 0, rotate: -10 }}
-                  whileInView={{ scale: 1, opacity: 1, rotate: 0 }}
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.3, duration: 0.6, ease: lenisEasing }}
+                  transition={{ delay: 0.2, duration: 0.4, ease: smoothEase }}
                 >
                   <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl sm:rounded-2xl bg-primary/10 flex items-center justify-center">
                     <GraduationCap className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 text-primary" />

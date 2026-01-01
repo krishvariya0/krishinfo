@@ -1,5 +1,5 @@
 import { Code, Rocket, Target } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem, motion, lenisEasing } from "@/components/ui/motion";
+import { FadeIn, StaggerContainer, StaggerItem, motion } from "@/components/ui/motion";
 
 const About = () => {
   const highlights = [
@@ -52,10 +52,10 @@ const About = () => {
                 <motion.div 
                   className="card-glass p-4 sm:p-6 group cursor-default"
                   whileHover={{ y: -5, scale: 1.02 }}
-                  transition={{ duration: 0.4, ease: lenisEasing }}
+                  transition={{ duration: 0.3 }}
                 >
                   <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="p-2 sm:p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
+                    <div className="p-2 sm:p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                       <item.icon className="h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
                     <div>
