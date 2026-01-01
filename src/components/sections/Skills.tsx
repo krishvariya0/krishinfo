@@ -7,6 +7,10 @@ import {
   SiNextdotjs, 
   SiTailwindcss, 
   SiFirebase, 
+  SiMongodb,
+  SiPostgresql,
+  SiMysql,
+  SiSqlite,
   SiGit, 
   SiGithub, 
   SiVercel, 
@@ -29,9 +33,13 @@ const Skills = () => {
       ]
     },
     {
-      title: "Backend / Services",
+      title: "Backend / Databases",
       skills: [
         { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+        { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+        { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+        { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+        { name: "SQLite", icon: SiSqlite, color: "#003B57" },
       ]
     },
     {
