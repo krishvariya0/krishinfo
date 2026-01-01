@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Home, User, Code, FolderKanban, GraduationCap, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { scrollToElement } from "@/hooks/useLenis";
 import MobileNav from "./MobileNav";
 
 const Navbar = () => {
@@ -23,11 +24,16 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    scrollToElement(href);
+  };
+
   return (
     <>
       {/* Mobile Top Header */}
       <header
-        className={`md:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`md:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
             ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-lg"
             : "bg-background/80 backdrop-blur-sm"
@@ -36,7 +42,11 @@ const Navbar = () => {
       >
         <div className="flex items-center justify-between h-14 px-4">
           {/* Logo */}
-          <a href="#hero" className="text-xl font-bold">
+          <a 
+            href="#hero" 
+            onClick={(e) => handleNavClick(e, "#hero")}
+            className="text-xl font-bold"
+          >
             <span className="text-gradient">KV</span>
           </a>
 
@@ -52,7 +62,7 @@ const Navbar = () => {
 
       {/* Desktop Navigation */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 hidden md:block ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 hidden md:block ${
           isScrolled
             ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-lg"
             : "bg-transparent"
@@ -61,7 +71,11 @@ const Navbar = () => {
         <div className="section-container">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <a href="#hero" className="text-xl font-bold">
+            <a 
+              href="#hero" 
+              onClick={(e) => handleNavClick(e, "#hero")}
+              className="text-xl font-bold transition-transform duration-300 hover:scale-105"
+            >
               <span className="text-gradient">KV</span>
             </a>
 
@@ -70,24 +84,26 @@ const Navbar = () => {
               {/* Home Button */}
               <a
                 href="#hero"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 relative group flex items-center gap-1"
+                onClick={(e) => handleNavClick(e, "#hero")}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 relative group flex items-center gap-1"
               >
                 <Home className="h-4 w-4 text-primary" />
                 Home
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-500 ease-out group-hover:w-full" />
               </a>
               {navItems.map((item, index) => (
                 <a
                   key={index}
                   href={item.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 relative group"
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 relative group"
                 >
                   <span className="text-primary font-mono mr-1">0{index + 1}.</span>
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-500 ease-out group-hover:w-full" />
                 </a>
               ))}
-              <Button variant="hero" size="sm" asChild>
+              <Button variant="hero" size="sm" className="transition-transform duration-300 hover:scale-105" asChild>
                 <a href="/resume.pdf" download>Resume</a>
               </Button>
             </div>

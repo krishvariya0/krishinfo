@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Home, User, Code, FolderKanban, Mail } from "lucide-react";
+import { scrollToElement } from "@/hooks/useLenis";
 
 const MobileNav = () => {
   const [mounted, setMounted] = useState(false);
@@ -16,6 +17,11 @@ const MobileNav = () => {
     { label: "Projects", href: "#projects", icon: FolderKanban },
     { label: "Contact", href: "#contact", icon: Mail },
   ];
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    scrollToElement(href, -20);
+  };
 
   const navContent = (
     <nav 
@@ -39,6 +45,7 @@ const MobileNav = () => {
             <a
               key={index}
               href={item.href}
+              onClick={(e) => handleNavClick(e, item.href)}
               className="flex flex-col items-center justify-center gap-0.5 p-2 text-muted-foreground hover:text-primary active:text-primary transition-colors duration-200"
             >
               <Icon className="h-5 w-5" />
