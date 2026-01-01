@@ -70,10 +70,10 @@ const LoadingScreen = ({ onComplete }) => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: smoothEase }}
         >
-          <div className="text-center">
+          <div className="text-center px-4 w-full max-w-[95vw] sm:max-w-none">
             {/* Name with typing effect */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight">
-              <span className="inline-flex text-foreground">
+            <h1 className="text-[clamp(1.75rem,8vw,6rem)] font-bold tracking-tight leading-tight">
+              <span className="inline-flex text-foreground flex-wrap justify-center">
                 {firstName.split("").map((char, index) => (
                   <motion.span
                     key={index}
@@ -88,9 +88,9 @@ const LoadingScreen = ({ onComplete }) => {
                 ))}
               </span>
               
-              <span className="inline-block w-3 sm:w-4"></span>
+              <span className="inline-block w-[0.15em]"></span>
               
-              <span className="inline-flex text-gradient">
+              <span className="inline-flex text-gradient flex-wrap justify-center">
                 {lastName.split("").map((char, index) => (
                   <motion.span
                     key={index}
@@ -107,7 +107,7 @@ const LoadingScreen = ({ onComplete }) => {
 
               {/* Blinking cursor */}
               <motion.span
-                className="text-primary ml-1"
+                className="text-primary ml-[0.05em]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: showCursor ? 1 : 0 }}
                 transition={{ duration: 0.05 }}
