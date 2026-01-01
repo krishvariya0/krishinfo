@@ -14,7 +14,8 @@ import {
   SiGit, 
   SiGithub, 
   SiVercel, 
-  SiNetlify 
+  SiNetlify,
+  SiFigma
 } from "react-icons/si";
 import { FadeIn, motion } from "@/components/ui/motion";
 
@@ -47,6 +48,7 @@ const Skills = () => {
       skills: [
         { name: "Git", icon: SiGit, color: "#F05032" },
         { name: "GitHub", icon: SiGithub, color: "#ffffff" },
+        { name: "Figma", icon: SiFigma, color: "#F24E1E" },
         { name: "Vercel", icon: SiVercel, color: "#ffffff" },
         { name: "Netlify", icon: SiNetlify, color: "#00C7B7" },
       ]
