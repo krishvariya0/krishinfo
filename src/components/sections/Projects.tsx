@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, MessageCircle, FileText, Users, Heart, Zap, ShoppingCart, Layout, Database, Lock, Palette, Globe } from "lucide-react";
+import { ExternalLink, Github, MessageCircle, FileText, Users, Heart, Zap } from "lucide-react";
 import { FadeIn, motion } from "@/components/ui/motion";
 
 const Projects = () => {
@@ -32,51 +32,6 @@ const Projects = () => {
       github: "https://github.com/krish-variya/fexora",
       live: "#",
       color: "from-purple-500/20 to-pink-500/10",
-    },
-  ];
-
-  const otherProjects = [
-    {
-      title: "E-Commerce Dashboard",
-      description: "An admin dashboard for managing products, orders, and analytics with charts and data visualization.",
-      techStack: ["React", "TypeScript", "Recharts", "Tailwind CSS"],
-      github: "https://github.com/krish-variya",
-      icon: ShoppingCart,
-    },
-    {
-      title: "Portfolio Template",
-      description: "A customizable portfolio template with smooth animations and modern design for developers.",
-      techStack: ["Next.js", "Framer Motion", "Tailwind CSS"],
-      github: "https://github.com/krish-variya",
-      icon: Layout,
-    },
-    {
-      title: "Task Manager API",
-      description: "RESTful API for task management with user authentication, CRUD operations, and data validation.",
-      techStack: ["Node.js", "Express", "MongoDB", "JWT"],
-      github: "https://github.com/krish-variya",
-      icon: Database,
-    },
-    {
-      title: "Auth Starter Kit",
-      description: "A complete authentication starter with email/password, OAuth, and protected routes.",
-      techStack: ["Next.js", "NextAuth", "Prisma", "TypeScript"],
-      github: "https://github.com/krish-variya",
-      icon: Lock,
-    },
-    {
-      title: "UI Component Library",
-      description: "A collection of reusable, accessible React components with Storybook documentation.",
-      techStack: ["React", "Storybook", "Radix UI", "CSS Modules"],
-      github: "https://github.com/krish-variya",
-      icon: Palette,
-    },
-    {
-      title: "Weather App",
-      description: "A weather application with location detection, 7-day forecast, and beautiful UI animations.",
-      techStack: ["React", "Weather API", "Geolocation", "Tailwind CSS"],
-      github: "https://github.com/krish-variya",
-      icon: Globe,
     },
   ];
 
@@ -182,54 +137,26 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Other Projects */}
-        <FadeIn>
-          <h3 className="text-xl sm:text-2xl font-bold text-center mb-6 sm:mb-8">
-            Other Noteworthy <span className="text-gradient">Projects</span>
-          </h3>
-        </FadeIn>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {otherProjects.map((project, index) => (
-            <FadeIn key={index} delay={index * 0.1}>
-              <motion.div
-                className="card-glass p-4 sm:p-6 h-full flex flex-col group"
-                whileHover={{ y: -5 }}
-                transition={{ duration: 0.3 }}
+        {/* View More on GitHub */}
+        <FadeIn delay={0.3}>
+          <div className="text-center">
+            <p className="text-muted-foreground mb-4 sm:mb-6 text-sm sm:text-base">
+              Want to see more of my work?
+            </p>
+            <Button variant="heroOutline" size="lg" asChild>
+              <a 
+                href="https://github.com/krish-variya" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="p-2 sm:p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                    <project.icon className="h-5 w-5 sm:h-6 sm:w-6" />
-                  </div>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Github className="h-5 w-5" />
-                  </a>
-                </div>
-
-                <h4 className="text-base sm:text-lg font-semibold mb-2">{project.title}</h4>
-                <p className="text-xs sm:text-sm text-muted-foreground mb-4 flex-1">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-auto">
-                  {project.techStack.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-2 py-0.5 text-xs bg-secondary/50 border border-border rounded-full text-muted-foreground font-mono"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            </FadeIn>
-          ))}
-        </div>
+                <Github className="mr-2 h-5 w-5" />
+                Visit My GitHub
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
