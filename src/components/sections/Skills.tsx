@@ -12,6 +12,7 @@ import {
   SiVercel, 
   SiNetlify 
 } from "react-icons/si";
+import { FadeIn, motion } from "@/components/ui/motion";
 
 const Skills = () => {
   const skillCategories = [
@@ -48,7 +49,7 @@ const Skills = () => {
     <section id="skills" className="py-24 relative bg-secondary/20">
       <div className="section-container">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <FadeIn className="text-center mb-16">
           <span className="text-primary font-mono text-sm mb-4 block">02. Skills</span>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Technologies I <span className="text-gradient">Work With</span>
@@ -56,30 +57,35 @@ const Skills = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             I specialize in modern web development technologies and continuously expand my toolkit
           </p>
-        </div>
+        </FadeIn>
 
         {/* Skills Grid */}
         <div className="space-y-12">
           {skillCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex}>
+            <FadeIn key={categoryIndex} delay={categoryIndex * 0.1}>
               <h3 className="text-xl font-semibold mb-6 text-center lg:text-left">
                 {category.title}
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
                 {category.skills.map((skill, skillIndex) => (
-                  <div
+                  <motion.div
                     key={skillIndex}
-                    className="card-glass p-4 flex flex-col items-center gap-3 hover-lift group cursor-default"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: skillIndex * 0.05 }}
+                    whileHover={{ y: -5, scale: 1.02 }}
+                    className="card-glass p-4 flex flex-col items-center gap-3 cursor-default"
                   >
                     <skill.icon 
-                      className="h-8 w-8 transition-transform duration-300 group-hover:scale-110"
+                      className="h-8 w-8 transition-transform duration-300"
                       style={{ color: skill.color }}
                     />
                     <span className="text-sm font-medium text-center">{skill.name}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </FadeIn>
           ))}
         </div>
       </div>
