@@ -21,7 +21,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-16 sm:py-20 lg:py-24 relative">
+    <section id="about" className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
       <div className="section-container">
         {/* Section Header */}
         <FadeIn className="text-center mb-10 sm:mb-12 lg:mb-16">
@@ -33,7 +33,7 @@ const About = () => {
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Text Content */}
-          <FadeIn direction="left" className="space-y-4 sm:space-y-6">
+          <FadeIn direction="up" className="space-y-4 sm:space-y-6">
             <p className="text-base sm:text-lg text-secondary-foreground leading-relaxed">
               I am currently pursuing a Bachelor of Computer Applications (BCA) at Vivekanand College for Advanced Computer and Information Science, Surat, where I am building a strong foundation in programming, software development, and modern web technologies.
             </p>
