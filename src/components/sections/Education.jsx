@@ -3,7 +3,7 @@ import { FadeIn, motion, smoothEase } from "@/components/ui/motion";
 
 const Education = () => {
   return (
-    <section id="education" className="py-16 sm:py-20 lg:py-24 relative bg-secondary/20">
+    <section id="education" className="py-16 sm:py-20 lg:py-24 relative bg-secondary/20 overflow-hidden">
       <div className="section-container">
         {/* Section Header */}
         <FadeIn className="text-center mb-10 sm:mb-12 lg:mb-16">
