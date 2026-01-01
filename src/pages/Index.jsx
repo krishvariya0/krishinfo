@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { useLenis } from "@/hooks/useLenis";
 import LoadingScreen from "@/components/LoadingScreen";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/sections/Hero";
@@ -12,6 +13,9 @@ import Footer from "@/components/sections/Footer";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
+  
+  // Initialize Lenis smooth scroll after loading completes
+  useLenis();
 
   return (
     <>
@@ -46,7 +50,7 @@ const Index = () => {
         />
       </Helmet>
 
-      {/* Loading Screen */}
+      {/* Loading Screen with Lenis-inspired animations */}
       <LoadingScreen onComplete={() => setIsLoading(false)} />
 
       <main className="min-h-screen bg-background">
