@@ -32,13 +32,13 @@ const LoadingScreen = ({ onComplete }) => {
   const letterVariants = {
     hidden: { 
       opacity: 0, 
-      y: 30,
+      y: 20,
     },
     visible: (i) => ({
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.4,
+        duration: 0.3,
         delay: i * 0.08,
         ease: smoothEase,
       },
@@ -48,13 +48,13 @@ const LoadingScreen = ({ onComplete }) => {
   const lastNameLetterVariants = {
     hidden: { 
       opacity: 0, 
-      y: 30,
+      y: 20,
     },
     visible: (i) => ({
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.4,
+        duration: 0.3,
         delay: 0.5 + i * 0.08,
         ease: smoothEase,
       },
@@ -65,41 +65,15 @@ const LoadingScreen = ({ onComplete }) => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="fixed inset-0 z-[999999] flex items-center justify-center overflow-hidden"
+          className="fixed inset-0 z-[999999] flex items-center justify-center bg-black"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5, ease: smoothEase }}
+          transition={{ duration: 0.4, ease: smoothEase }}
         >
-          {/* Background gradient - matching hero section */}
-          <div 
-            className="absolute inset-0"
-            style={{ background: 'radial-gradient(ellipse at top, hsl(220 10% 12%), hsl(220 10% 4%))' }}
-          />
-          
-          {/* Subtle grid pattern */}
-          <motion.div 
-            className="absolute inset-0 opacity-[0.03]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.03 }}
-            transition={{ duration: 1 }}
-            style={{
-              backgroundImage: `linear-gradient(hsl(0 0% 100%) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100%) 1px, transparent 1px)`,
-              backgroundSize: '40px 40px'
-            }}
-          />
-
-          {/* Floating orb - matching hero section */}
-          <motion.div 
-            className="absolute top-1/4 right-1/4 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-primary/10 rounded-full blur-3xl"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.5, ease: smoothEase }}
-          />
-
-          <div className="text-center px-4 w-full max-w-[95vw] sm:max-w-none relative z-10">
+          <div className="text-center px-6 w-full">
             {/* Name with typing effect */}
-            <h1 className="text-[clamp(1.75rem,8vw,6rem)] font-bold tracking-tight leading-tight mb-4 sm:mb-6">
-              <span className="inline-flex text-foreground flex-wrap justify-center">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-tight mb-3 sm:mb-4 md:mb-6">
+              <span className="inline text-foreground">
                 {firstName.split("").map((char, index) => (
                   <motion.span
                     key={index}
@@ -114,9 +88,9 @@ const LoadingScreen = ({ onComplete }) => {
                 ))}
               </span>
               
-              <span className="inline-block w-[0.15em]"></span>
+              <span className="inline-block w-2 sm:w-3 md:w-4"></span>
               
-              <span className="inline-flex text-gradient flex-wrap justify-center">
+              <span className="inline text-gradient">
                 {lastName.split("").map((char, index) => (
                   <motion.span
                     key={index}
@@ -133,8 +107,7 @@ const LoadingScreen = ({ onComplete }) => {
 
               {/* Blinking cursor */}
               <motion.span
-                className="text-primary ml-[0.05em]"
-                initial={{ opacity: 0 }}
+                className="text-primary ml-1"
                 animate={{ opacity: showCursor ? 1 : 0 }}
                 transition={{ duration: 0.05 }}
               >
@@ -142,12 +115,12 @@ const LoadingScreen = ({ onComplete }) => {
               </motion.span>
             </h1>
 
-            {/* Role - matching hero section style */}
+            {/* Role */}
             <motion.p 
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-mono"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.8, ease: smoothEase }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-muted-foreground font-mono"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 1.8, ease: smoothEase }}
             >
               Frontend / Full-Stack Developer
             </motion.p>
