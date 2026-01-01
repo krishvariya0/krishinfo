@@ -19,10 +19,17 @@ const MobileNav = () => {
 
   const navContent = (
     <nav 
-      className="md:hidden fixed bottom-0 left-0 right-0 bg-background border-t border-border"
+      className="md:hidden bg-background border-t border-border"
       style={{ 
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0,
         zIndex: 99999,
         paddingBottom: 'max(env(safe-area-inset-bottom, 0px), 8px)',
+        transform: 'none',
+        willChange: 'auto',
+        backfaceVisibility: 'hidden',
       }}
     >
       <div className="flex items-center justify-around h-14 px-2">
@@ -43,7 +50,6 @@ const MobileNav = () => {
     </nav>
   );
 
-  // Only use portal after component is mounted
   if (mounted) {
     return createPortal(navContent, document.body);
   }
