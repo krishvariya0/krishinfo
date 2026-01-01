@@ -25,6 +25,31 @@ const Navbar = () => {
 
   return (
     <>
+      {/* Mobile Top Header */}
+      <header
+        className={`md:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-lg"
+            : "bg-background/80 backdrop-blur-sm"
+        }`}
+        style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}
+      >
+        <div className="flex items-center justify-between h-14 px-4">
+          {/* Logo */}
+          <a href="#hero" className="text-xl font-bold">
+            <span className="text-gradient">KV</span>
+          </a>
+
+          {/* Resume Button */}
+          <Button variant="hero" size="sm" asChild>
+            <a href="/resume.pdf" download className="flex items-center gap-1.5">
+              <Download className="h-4 w-4" />
+              Resume
+            </a>
+          </Button>
+        </div>
+      </header>
+
       {/* Desktop Navigation */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 hidden md:block ${
