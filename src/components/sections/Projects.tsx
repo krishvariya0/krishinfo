@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, MessageCircle, FileText, Users, Heart, Zap } from "lucide-react";
 import { FadeIn, motion } from "@/components/ui/motion";
 import chatzaPreview from "@/assets/chatza-preview.png";
+import fexoraPreview from "@/assets/fexora-preview.png";
 
 const Projects = () => {
   const featuredProjects = [
@@ -15,7 +16,7 @@ const Projects = () => {
         { icon: Zap, text: "Real-time Interactions" },
         { icon: MessageCircle, text: "User Profiles" },
       ],
-      techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Firebase"],
+      techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
       github: "https://github.com/krishvariya0/chatza",
       live: "https://chatza-one.vercel.app/",
       image: chatzaPreview,
@@ -30,10 +31,10 @@ const Projects = () => {
         { icon: Users, text: "User Authentication" },
         { icon: Zap, text: "Real-time Updates" },
       ],
-      techStack: ["React", "Next.js", "Firebase", "Tailwind CSS"],
+      techStack: ["React", "Firebase", "Tailwind CSS"],
       github: "https://github.com/krishvariya0/fexora",
       live: "https://fexora-blog.vercel.app/",
-      image: null,
+      image: fexoraPreview,
       color: "from-purple-500/20 to-pink-500/10",
     },
   ];
