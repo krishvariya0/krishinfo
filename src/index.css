@@ -53,8 +53,14 @@
 
   html {
     scroll-behavior: smooth;
-    /* Fix for mobile viewport height with address bar */
-    height: -webkit-fill-available;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Ensure proper mobile viewport height */
+  @supports (height: 100dvh) {
+    .min-h-screen {
+      min-height: 100dvh;
+    }
   }
 
   body {
