@@ -59,7 +59,7 @@ const Navbar = () => {
       <div className="section-container">
         <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
-          <a href="#" className="text-lg sm:text-xl font-bold z-50">
+          <a href="#hero" className="text-lg sm:text-xl font-bold z-50">
             <span className="text-gradient">KV</span>
           </a>
 
@@ -67,7 +67,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-4 lg:gap-8">
             {/* Home Button */}
             <a
-              href="#"
+              href="#hero"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 relative group flex items-center gap-1"
             >
               <Home className="h-4 w-4 text-primary" />
@@ -118,7 +118,7 @@ const Navbar = () => {
             <div className="section-container py-8 space-y-6 h-full flex flex-col">
               {/* Home Link */}
               <motion.a
-                href="#"
+                href="#hero"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center gap-2 text-lg sm:text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
                 initial={{ opacity: 0, x: -20 }}

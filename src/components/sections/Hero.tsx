@@ -4,7 +4,7 @@ import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
       {/* Background gradient */}
       <div 
         className="absolute inset-0"
