@@ -70,10 +70,10 @@ const LoadingScreen = ({ onComplete }) => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4, ease: smoothEase }}
         >
-          <div className="text-center px-6 w-full">
+          <div className="text-center px-4 w-full max-w-full overflow-hidden">
             {/* Name with typing effect */}
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-tight mb-3 sm:mb-4 md:mb-6">
-              <span className="inline text-foreground">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-tight mb-3 sm:mb-4 md:mb-6 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-3 md:gap-4">
+              <span className="text-foreground whitespace-nowrap">
                 {firstName.split("").map((char, index) => (
                   <motion.span
                     key={index}
@@ -88,9 +88,7 @@ const LoadingScreen = ({ onComplete }) => {
                 ))}
               </span>
               
-              <span className="inline-block w-2 sm:w-3 md:w-4"></span>
-              
-              <span className="inline text-gradient">
+              <span className="text-gradient whitespace-nowrap">
                 {lastName.split("").map((char, index) => (
                   <motion.span
                     key={index}
@@ -103,16 +101,15 @@ const LoadingScreen = ({ onComplete }) => {
                     {char}
                   </motion.span>
                 ))}
+                {/* Blinking cursor */}
+                <motion.span
+                  className="text-primary ml-1"
+                  animate={{ opacity: showCursor ? 1 : 0 }}
+                  transition={{ duration: 0.05 }}
+                >
+                  |
+                </motion.span>
               </span>
-
-              {/* Blinking cursor */}
-              <motion.span
-                className="text-primary ml-1"
-                animate={{ opacity: showCursor ? 1 : 0 }}
-                transition={{ duration: 0.05 }}
-              >
-                |
-              </motion.span>
             </h1>
 
             {/* Role */}
