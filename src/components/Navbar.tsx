@@ -1,18 +1,24 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Home } from "lucide-react";
+import { Home, User, Code, FolderKanban, GraduationCap, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "About", href: "#about" },
-    { label: "Skills", href: "#skills" },
-    { label: "Projects", href: "#projects" },
-    { label: "Education", href: "#education" },
-    { label: "Contact", href: "#contact" },
+    { label: "About", href: "#about", icon: User },
+    { label: "Skills", href: "#skills", icon: Code },
+    { label: "Projects", href: "#projects", icon: FolderKanban },
+    { label: "Education", href: "#education", icon: GraduationCap },
+    { label: "Contact", href: "#contact", icon: Mail },
+  ];
+
+  const mobileNavItems = [
+    { label: "Home", href: "#hero", icon: Home },
+    { label: "About", href: "#about", icon: User },
+    { label: "Skills", href: "#skills", icon: Code },
+    { label: "Projects", href: "#projects", icon: FolderKanban },
+    { label: "Contact", href: "#contact", icon: Mail },
   ];
 
   useEffect(() => {
@@ -24,141 +30,75 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on resize
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setIsMobileMenuOpen(false);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Prevent body scroll when mobile menu is open
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isMobileMenuOpen]);
-
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-lg"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="section-container">
-        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
-          {/* Logo */}
-          <a href="#hero" className="text-lg sm:text-xl font-bold z-50">
-            <span className="text-gradient">KV</span>
-          </a>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-4 lg:gap-8">
-            {/* Home Button */}
-            <a
-              href="#hero"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 relative group flex items-center gap-1"
-            >
-              <Home className="h-4 w-4 text-primary" />
-              Home
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+    <>
+      {/* Desktop Navigation */}
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 hidden md:block ${
+          isScrolled
+            ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-lg"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="section-container">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
+            <a href="#hero" className="text-xl font-bold">
+              <span className="text-gradient">KV</span>
             </a>
-            {navItems.map((item, index) => (
+
+            {/* Desktop Navigation */}
+            <div className="flex items-center gap-8">
+              {/* Home Button */}
+              <a
+                href="#hero"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 relative group flex items-center gap-1"
+              >
+                <Home className="h-4 w-4 text-primary" />
+                Home
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+              </a>
+              {navItems.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.href}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 relative group"
+                >
+                  <span className="text-primary font-mono mr-1">0{index + 1}.</span>
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                </a>
+              ))}
+              <Button variant="hero" size="sm" asChild>
+                <a href="/resume.pdf" download>Resume</a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Bottom Navigation */}
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-t border-border">
+        <div className="flex items-center justify-around h-16 px-2">
+          {mobileNavItems.map((item, index) => {
+            const Icon = item.icon;
+            return (
               <a
                 key={index}
                 href={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 relative group"
+                className="flex flex-col items-center justify-center gap-1 p-2 text-muted-foreground hover:text-primary transition-colors duration-300"
               >
-                <span className="text-primary font-mono mr-1">0{index + 1}.</span>
-                {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                <Icon className="h-5 w-5" />
+                <span className="text-[10px] font-medium">{item.label}</span>
               </a>
-            ))}
-            <Button variant="hero" size="sm" asChild>
-              <a href="/resume.pdf" download>Resume</a>
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-secondary transition-colors z-50"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-5 w-5 sm:h-6 sm:w-6" />
-            ) : (
-              <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
-            )}
-          </button>
+            );
+          })}
         </div>
-      </div>
+      </nav>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden fixed inset-0 top-14 sm:top-16 bg-background/95 backdrop-blur-xl border-t border-border"
-          >
-            <div className="section-container py-8 space-y-6 h-full flex flex-col">
-              {/* Home Link */}
-              <motion.a
-                href="#hero"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center gap-2 text-lg sm:text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0 }}
-              >
-                <Home className="h-5 w-5 text-primary" />
-                Home
-              </motion.a>
-              {navItems.map((item, index) => (
-                <motion.a
-                  key={index}
-                  href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-lg sm:text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: (index + 1) * 0.05 }}
-                >
-                  <span className="text-primary font-mono mr-2">0{index + 1}.</span>
-                  {item.label}
-                </motion.a>
-              ))}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navItems.length * 0.05 }}
-                className="pt-4"
-              >
-                <Button variant="hero" className="w-full" asChild>
-                  <a href="/resume.pdf" download onClick={() => setIsMobileMenuOpen(false)}>
-                    Download Resume
-                  </a>
-                </Button>
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+      {/* Spacer for mobile bottom nav */}
+      <div className="md:hidden h-16" />
+    </>
   );
 };
 
