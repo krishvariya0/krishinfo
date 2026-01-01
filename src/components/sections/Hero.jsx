@@ -139,9 +139,9 @@ const Hero = () => {
           </motion.a>
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator - hidden on mobile to avoid overlap with bottom nav */}
         <motion.div 
-          className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2"
+          className="absolute bottom-20 md:bottom-8 left-1/2 -translate-x-1/2 hidden sm:block"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
