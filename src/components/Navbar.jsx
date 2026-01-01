@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Home, User, Code, FolderKanban, GraduationCap, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import MobileNav from "./MobileNav";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -10,14 +11,6 @@ const Navbar = () => {
     { label: "Skills", href: "#skills", icon: Code },
     { label: "Projects", href: "#projects", icon: FolderKanban },
     { label: "Education", href: "#education", icon: GraduationCap },
-    { label: "Contact", href: "#contact", icon: Mail },
-  ];
-
-  const mobileNavItems = [
-    { label: "Home", href: "#hero", icon: Home },
-    { label: "About", href: "#about", icon: User },
-    { label: "Skills", href: "#skills", icon: Code },
-    { label: "Projects", href: "#projects", icon: FolderKanban },
     { label: "Contact", href: "#contact", icon: Mail },
   ];
 
@@ -77,33 +70,8 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile Bottom Navigation */}
-      <nav 
-        className="md:hidden fixed bottom-0 left-0 right-0 z-[9999] bg-background border-t border-border"
-        style={{ 
-          paddingBottom: 'env(safe-area-inset-bottom, 8px)',
-          transform: 'translateZ(0)',
-          isolation: 'isolate'
-        }}
-      >
-        <div className="flex items-center justify-around h-14 px-2 bg-background">
-          {mobileNavItems.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <a
-                key={index}
-                href={item.href}
-                className="flex flex-col items-center justify-center gap-0.5 p-2 text-muted-foreground hover:text-primary transition-colors duration-300"
-              >
-                <Icon className="h-5 w-5" />
-                <span className="text-[10px] font-medium">{item.label}</span>
-              </a>
-            );
-          })}
-        </div>
-      </nav>
-
-      {/* Spacer removed - footer handles bottom padding */}
+      {/* Mobile Bottom Navigation - rendered via portal */}
+      <MobileNav />
     </>
   );
 };

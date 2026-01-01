@@ -53,6 +53,8 @@
 
   html {
     scroll-behavior: smooth;
+    /* Fix for mobile viewport height with address bar */
+    height: -webkit-fill-available;
   }
 
   body {
