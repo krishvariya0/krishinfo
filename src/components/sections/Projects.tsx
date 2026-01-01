@@ -16,7 +16,7 @@ const Projects = () => {
       ],
       techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Firebase"],
       github: "https://github.com/krishvariya0/chatza",
-      live: "#",
+      live: "https://chatza-one.vercel.app/",
       color: "from-cyan-500/20 to-blue-500/10",
     },
     {
@@ -30,7 +30,7 @@ const Projects = () => {
       ],
       techStack: ["React", "Next.js", "Firebase", "Tailwind CSS"],
       github: "https://github.com/krishvariya0/fexora",
-      live: "#",
+      live: "https://fexora-blog.vercel.app/",
       color: "from-purple-500/20 to-pink-500/10",
     },
   ];
