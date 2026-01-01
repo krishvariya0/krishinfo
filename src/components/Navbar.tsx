@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -8,7 +8,6 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "Home", href: "#" },
     { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
@@ -66,6 +65,15 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-4 lg:gap-8">
+            {/* Home Button */}
+            <a
+              href="#"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 relative group flex items-center gap-1"
+            >
+              <Home className="h-4 w-4 text-primary" />
+              Home
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+            </a>
             {navItems.map((item, index) => (
               <a
                 key={index}
@@ -108,6 +116,18 @@ const Navbar = () => {
             className="md:hidden fixed inset-0 top-14 sm:top-16 bg-background/95 backdrop-blur-xl border-t border-border"
           >
             <div className="section-container py-8 space-y-6 h-full flex flex-col">
+              {/* Home Link */}
+              <motion.a
+                href="#"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center gap-2 text-lg sm:text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0 }}
+              >
+                <Home className="h-5 w-5 text-primary" />
+                Home
+              </motion.a>
               {navItems.map((item, index) => (
                 <motion.a
                   key={index}
@@ -116,7 +136,7 @@ const Navbar = () => {
                   className="block text-lg sm:text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
+                  transition={{ delay: (index + 1) * 0.05 }}
                 >
                   <span className="text-primary font-mono mr-2">0{index + 1}.</span>
                   {item.label}
