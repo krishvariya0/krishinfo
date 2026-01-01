@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, MessageCircle, FileText, Users, Heart, Zap } from "lucide-react";
-import { FadeIn, motion, lenisEasing } from "@/components/ui/motion";
+import { FadeIn, motion, smoothEase } from "@/components/ui/motion";
 import chatzaPreview from "@/assets/chatza-preview.png";
 import fexoraPreview from "@/assets/fexora-preview.png";
 
@@ -56,11 +56,11 @@ const Projects = () => {
         {/* Featured Projects */}
         <div className="space-y-8 sm:space-y-10 lg:space-y-12 mb-12 sm:mb-16">
           {featuredProjects.map((project, index) => (
-            <FadeIn key={index} delay={index * 0.2}>
+            <FadeIn key={index} delay={index * 0.15}>
               <motion.div
                 className="card-glass p-4 sm:p-6 lg:p-8"
-                whileHover={{ y: -8 }}
-                transition={{ duration: 0.5, ease: lenisEasing }}
+                whileHover={{ y: -5 }}
+                transition={{ duration: 0.3 }}
               >
                 <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
                   {/* Project Info */}
@@ -84,7 +84,7 @@ const Projects = () => {
                           initial={{ opacity: 0, x: -20 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
-                          transition={{ delay: 0.4 + featureIndex * 0.1, duration: 0.5, ease: lenisEasing }}
+                          transition={{ delay: 0.3 + featureIndex * 0.1, duration: 0.4, ease: smoothEase }}
                         >
                           <feature.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary flex-shrink-0" />
                           <span>{feature.text}</span>
@@ -101,7 +101,7 @@ const Projects = () => {
                           initial={{ opacity: 0, scale: 0.8 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
-                          transition={{ delay: 0.5 + techIndex * 0.05, duration: 0.4, ease: lenisEasing }}
+                          transition={{ delay: 0.4 + techIndex * 0.05, duration: 0.3, ease: smoothEase }}
                         >
                           {tech}
                         </motion.span>
@@ -129,8 +129,8 @@ const Projects = () => {
                   <div className="lg:w-1/3 flex items-center justify-center order-first lg:order-last">
                     <motion.div 
                       className={`w-full aspect-video max-w-[280px] sm:max-w-[320px] lg:max-w-[360px] rounded-2xl bg-gradient-to-br ${project.color} border border-primary/20 flex items-center justify-center overflow-hidden`}
-                      whileHover={{ scale: 1.08, rotate: 2 }}
-                      transition={{ duration: 0.5, ease: lenisEasing }}
+                      whileHover={{ scale: 1.05, rotate: 1 }}
+                      transition={{ duration: 0.3 }}
                     >
                       {project.image ? (
                         <img 
@@ -150,7 +150,7 @@ const Projects = () => {
         </div>
 
         {/* View More on GitHub */}
-        <FadeIn delay={0.3}>
+        <FadeIn delay={0.2}>
           <div className="text-center">
             <p className="text-muted-foreground mb-4 sm:mb-6 text-sm sm:text-base">
               Want to see more of my work?

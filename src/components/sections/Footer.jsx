@@ -1,5 +1,5 @@
 import { Github, Linkedin, Mail, Heart, Instagram } from "lucide-react";
-import { motion, lenisEasing } from "@/components/ui/motion";
+import { motion } from "@/components/ui/motion";
 import { scrollToTop } from "@/hooks/useLenis";
 
 const Footer = () => {
@@ -20,7 +20,7 @@ const Footer = () => {
             onClick={handleScrollToTop}
             className="text-2xl font-bold cursor-pointer"
             whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.3, ease: lenisEasing }}
+            transition={{ duration: 0.2 }}
           >
             <span className="text-gradient">KV</span>
           </motion.a>
@@ -31,10 +31,9 @@ const Footer = () => {
               href="https://github.com/krishvariya0"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-500"
-              whileHover={{ scale: 1.15, y: -3 }}
+              className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-300"
+              whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.3, ease: lenisEasing }}
             >
               <Github className="h-4 w-4 sm:h-5 sm:w-5" />
             </motion.a>
@@ -42,10 +41,9 @@ const Footer = () => {
               href="https://www.linkedin.com/in/krish-variya"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-500"
-              whileHover={{ scale: 1.15, y: -3 }}
+              className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-300"
+              whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.3, ease: lenisEasing }}
             >
               <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
             </motion.a>
@@ -53,19 +51,17 @@ const Footer = () => {
               href="https://www.instagram.com/krxsh.in/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-500"
-              whileHover={{ scale: 1.15, y: -3 }}
+              className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-300"
+              whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.3, ease: lenisEasing }}
             >
               <Instagram className="h-4 w-4 sm:h-5 sm:w-5" />
             </motion.a>
             <motion.a
               href="mailto:variyakrish0@gmail.com"
-              className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-500"
-              whileHover={{ scale: 1.15, y: -3 }}
+              className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-300"
+              whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.3, ease: lenisEasing }}
             >
               <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
             </motion.a>

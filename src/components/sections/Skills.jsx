@@ -17,7 +17,7 @@ import {
   SiNetlify,
   SiFigma
 } from "react-icons/si";
-import { FadeIn, motion, lenisEasing } from "@/components/ui/motion";
+import { FadeIn, motion, smoothEase } from "@/components/ui/motion";
 
 const Skills = () => {
   const skillCategories = [
@@ -72,7 +72,7 @@ const Skills = () => {
         {/* Skills Grid */}
         <div className="space-y-8 sm:space-y-10 lg:space-y-12">
           {skillCategories.map((category, categoryIndex) => (
-            <FadeIn key={categoryIndex} delay={categoryIndex * 0.15}>
+            <FadeIn key={categoryIndex} delay={categoryIndex * 0.1}>
               <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-center lg:text-left">
                 {category.title}
               </h3>
@@ -80,15 +80,15 @@ const Skills = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skillIndex}
-                    initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: skillIndex * 0.05, ease: lenisEasing }}
-                    whileHover={{ y: -8, scale: 1.05 }}
+                    transition={{ duration: 0.4, delay: skillIndex * 0.05, ease: smoothEase }}
+                    whileHover={{ y: -5, scale: 1.05 }}
                     className="card-glass p-3 sm:p-4 flex flex-col items-center gap-2 sm:gap-3 cursor-default"
                   >
                     <skill.icon 
-                      className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 transition-all duration-500"
+                      className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 transition-all duration-300"
                       style={{ color: skill.color }}
                     />
                     <span className="text-xs sm:text-sm font-medium text-center leading-tight">{skill.name}</span>

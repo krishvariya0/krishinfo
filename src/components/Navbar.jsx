@@ -33,7 +33,7 @@ const Navbar = () => {
     <>
       {/* Mobile Top Header */}
       <header
-        className={`md:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`md:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
             ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-lg"
             : "bg-background/80 backdrop-blur-sm"
@@ -62,7 +62,7 @@ const Navbar = () => {
 
       {/* Desktop Navigation */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 hidden md:block ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 hidden md:block ${
           isScrolled
             ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-lg"
             : "bg-transparent"
@@ -89,7 +89,7 @@ const Navbar = () => {
               >
                 <Home className="h-4 w-4 text-primary" />
                 Home
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-500 ease-out group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-out group-hover:w-full" />
               </a>
               {navItems.map((item, index) => (
                 <a
@@ -100,7 +100,7 @@ const Navbar = () => {
                 >
                   <span className="text-primary font-mono mr-1">0{index + 1}.</span>
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-500 ease-out group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-out group-hover:w-full" />
                 </a>
               ))}
               <Button variant="hero" size="sm" className="transition-transform duration-300 hover:scale-105" asChild>

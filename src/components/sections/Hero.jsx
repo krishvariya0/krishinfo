@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { motion, lenisEasing } from "@/components/ui/motion";
+import { motion, smoothEase } from "@/components/ui/motion";
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import { scrollToElement } from "@/hooks/useLenis";
 
@@ -22,7 +22,7 @@ const Hero = () => {
         className="absolute inset-0 opacity-[0.03]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.03 }}
-        transition={{ duration: 2, ease: lenisEasing }}
+        transition={{ duration: 1 }}
         style={{
           backgroundImage: `linear-gradient(hsl(0 0% 100%) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100%) 1px, transparent 1px)`,
           backgroundSize: '40px 40px'
@@ -39,8 +39,8 @@ const Hero = () => {
           y: [0, -20, 0],
         }}
         transition={{ 
-          scale: { duration: 1.5, ease: lenisEasing },
-          opacity: { duration: 1.5, ease: lenisEasing },
+          scale: { duration: 1, ease: smoothEase },
+          opacity: { duration: 1, ease: smoothEase },
           y: { duration: 8, repeat: Infinity, ease: "easeInOut" }
         }}
       />
@@ -48,9 +48,9 @@ const Hero = () => {
       <div className="section-container relative z-10 text-center py-16 sm:py-20">
         {/* Status badge */}
         <motion.div
-          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.8, delay: 0.2, ease: lenisEasing }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: smoothEase }}
           className="mb-6 sm:mb-8"
         >
           <span className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-secondary/50 border border-border text-xs sm:text-sm text-muted-foreground">
@@ -61,9 +61,9 @@ const Hero = () => {
 
         {/* Name */}
         <motion.h1 
-          initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1, delay: 0.3, ease: lenisEasing }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: smoothEase }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-4 sm:mb-6"
         >
           <span className="text-foreground">Krish</span>{" "}
@@ -72,9 +72,9 @@ const Hero = () => {
 
         {/* Role */}
         <motion.p 
-          initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1, delay: 0.5, ease: lenisEasing }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4, ease: smoothEase }}
           className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-3 sm:mb-4 font-mono"
         >
           Frontend / Full-Stack Developer
@@ -82,9 +82,9 @@ const Hero = () => {
 
         {/* Tagline */}
         <motion.p 
-          initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1, delay: 0.6, ease: lenisEasing }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5, ease: smoothEase }}
           className="text-sm sm:text-base md:text-lg lg:text-xl text-secondary-foreground max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2"
         >
           Building modern, responsive & real-world web applications using{" "}
@@ -94,9 +94,9 @@ const Hero = () => {
 
         {/* CTA Buttons */}
         <motion.div 
-          initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1, delay: 0.7, ease: lenisEasing }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6, ease: smoothEase }}
           className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-12"
         >
           <Button variant="hero" size="lg" className="w-full sm:w-auto transition-transform duration-300 hover:scale-105" asChild>
@@ -115,19 +115,18 @@ const Hero = () => {
 
         {/* Social Links */}
         <motion.div 
-          initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1, delay: 0.8, ease: lenisEasing }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.7, ease: smoothEase }}
           className="flex items-center justify-center gap-3 sm:gap-4"
         >
           <motion.a 
             href="https://github.com/krishvariya0" 
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-500"
-            whileHover={{ scale: 1.15, y: -3 }}
+            className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-300"
+            whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.3, ease: lenisEasing }}
           >
             <Github className="h-4 w-4 sm:h-5 sm:w-5" />
           </motion.a>
@@ -135,19 +134,17 @@ const Hero = () => {
             href="https://www.linkedin.com/in/krish-variya" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-500"
-            whileHover={{ scale: 1.15, y: -3 }}
+            className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-300"
+            whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.3, ease: lenisEasing }}
           >
             <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
           </motion.a>
           <motion.a 
             href="mailto:variyakrish0@gmail.com"
-            className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-500"
-            whileHover={{ scale: 1.15, y: -3 }}
+            className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-300"
+            whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.3, ease: lenisEasing }}
           >
             <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
           </motion.a>
@@ -159,8 +156,8 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: [0, 10, 0] }}
           transition={{ 
-            opacity: { duration: 1, delay: 1.2 },
-            y: { duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1.2 }
+            opacity: { duration: 0.6, delay: 0.8 },
+            y: { duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.8 }
           }}
           onClick={handleScrollDown}
         >

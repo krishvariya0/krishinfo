@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Download, Github, Instagram, Linkedin, Mail, MapPin, Send } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem, motion, lenisEasing } from "@/components/ui/motion";
+import { FadeIn, StaggerContainer, StaggerItem, motion } from "@/components/ui/motion";
 
 const Contact = () => {
   const contactInfo = [
@@ -57,8 +57,8 @@ const Contact = () => {
               <StaggerItem key={index}>
                 <motion.div 
                   className="card-glass p-4 sm:p-6 group"
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  transition={{ duration: 0.4, ease: lenisEasing }}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
                 >
                   {contact.href ? (
                     <a
@@ -67,7 +67,7 @@ const Contact = () => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 sm:gap-4"
                     >
-                      <div className="p-2 sm:p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
+                      <div className="p-2 sm:p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                         <contact.icon className="h-5 w-5 sm:h-6 sm:w-6" />
                       </div>
                       <div className="min-w-0">
@@ -92,7 +92,7 @@ const Contact = () => {
           </StaggerContainer>
 
           {/* CTA Buttons */}
-          <FadeIn delay={0.3} className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+          <FadeIn delay={0.2} className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <Button variant="hero" size="lg" className="w-full sm:w-auto transition-transform duration-300 hover:scale-105" asChild>
               <a href="mailto:variyakrish0@gmail.com">
                 <Send className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
