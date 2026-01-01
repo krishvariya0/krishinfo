@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, MessageCircle, FileText, Users, Heart, Zap } from "lucide-react";
 import { FadeIn, motion } from "@/components/ui/motion";
+import chatzaPreview from "@/assets/chatza-preview.png";
 
 const Projects = () => {
   const featuredProjects = [
@@ -17,6 +18,7 @@ const Projects = () => {
       techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Firebase"],
       github: "https://github.com/krishvariya0/chatza",
       live: "https://chatza-one.vercel.app/",
+      image: chatzaPreview,
       color: "from-cyan-500/20 to-blue-500/10",
     },
     {
@@ -31,6 +33,7 @@ const Projects = () => {
       techStack: ["React", "Next.js", "Firebase", "Tailwind CSS"],
       github: "https://github.com/krishvariya0/fexora",
       live: "https://fexora-blog.vercel.app/",
+      image: null,
       color: "from-purple-500/20 to-pink-500/10",
     },
   ];
@@ -124,11 +127,19 @@ const Projects = () => {
                   {/* Project Visual */}
                   <div className="lg:w-1/3 flex items-center justify-center order-first lg:order-last">
                     <motion.div 
-                      className={`w-full aspect-square max-w-[200px] sm:max-w-[240px] lg:max-w-[280px] rounded-2xl bg-gradient-to-br ${project.color} border border-primary/20 flex items-center justify-center`}
+                      className={`w-full aspect-video max-w-[280px] sm:max-w-[320px] lg:max-w-[360px] rounded-2xl bg-gradient-to-br ${project.color} border border-primary/20 flex items-center justify-center overflow-hidden`}
                       whileHover={{ scale: 1.05, rotate: 2 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <span className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient">{project.title[0]}</span>
+                      {project.image ? (
+                        <img 
+                          src={project.image} 
+                          alt={`${project.title} preview`}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <span className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient">{project.title[0]}</span>
+                      )}
                     </motion.div>
                   </div>
                 </div>
