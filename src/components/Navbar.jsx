@@ -80,7 +80,12 @@ const Navbar = () => {
       {/* Mobile Bottom Navigation */}
       <nav 
         className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-t border-border"
-        style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
+        style={{ 
+          paddingBottom: 'env(safe-area-inset-bottom, 0px)',
+          transform: 'none',
+          willChange: 'auto'
+        }}
+        data-lenis-prevent
       >
         <div className="flex items-center justify-around h-16 px-2">
           {mobileNavItems.map((item, index) => {
