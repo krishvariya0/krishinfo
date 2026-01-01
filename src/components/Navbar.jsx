@@ -96,8 +96,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Spacer for mobile bottom nav */}
-      <div className="md:hidden h-16" />
+      {/* Spacer removed - footer handles bottom padding */}
     </>
   );
 };
