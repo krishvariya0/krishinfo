@@ -54,6 +54,7 @@
   html {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
   }
   
   /* Ensure proper mobile viewport height */
@@ -66,6 +67,8 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
   }
 
   ::selection {
