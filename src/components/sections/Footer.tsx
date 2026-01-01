@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex items-center gap-3 sm:gap-4">
             <motion.a
-              href="https://github.com/krish-variya"
+              href="https://github.com/krishvariya0"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-300"

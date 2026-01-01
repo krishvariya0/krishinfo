@@ -15,7 +15,7 @@ const Projects = () => {
         { icon: MessageCircle, text: "User Profiles" },
       ],
       techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Firebase"],
-      github: "https://github.com/krish-variya/chatza",
+      github: "https://github.com/krishvariya0/chatza",
       live: "#",
       color: "from-cyan-500/20 to-blue-500/10",
     },
@@ -29,7 +29,7 @@ const Projects = () => {
         { icon: Zap, text: "Real-time Updates" },
       ],
       techStack: ["React", "Next.js", "Firebase", "Tailwind CSS"],
-      github: "https://github.com/krish-variya/fexora",
+      github: "https://github.com/krishvariya0/fexora",
       live: "#",
       color: "from-purple-500/20 to-pink-500/10",
     },
@@ -145,8 +145,8 @@ const Projects = () => {
             </p>
             <Button variant="heroOutline" size="lg" asChild>
               <a 
-                href="https://github.com/krish-variya" 
-                target="_blank" 
+                href="https://github.com/krishvariya0" 
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center"
               >
