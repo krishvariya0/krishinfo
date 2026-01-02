@@ -5,9 +5,31 @@ import { scrollToElement } from "@/hooks/useLenis";
 
 const MobileNav = () => {
   const [mounted, setMounted] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const sections = ["hero", "about", "skills", "projects", "contact"];
+    
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+      
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const mobileNavItems = [
@@ -41,16 +63,24 @@ const MobileNav = () => {
       <div className="flex items-center justify-around h-14 px-2">
         {mobileNavItems.map((item, index) => {
           const Icon = item.icon;
+          const sectionId = item.href.replace("#", "");
+          const isActive = activeSection === sectionId;
           return (
             <a
               key={index}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="flex flex-col items-center justify-center gap-0.5 p-2 text-muted-foreground hover:text-primary active:text-primary transition-colors duration-200"
+              className={`flex flex-col items-center justify-center gap-0.5 p-2 transition-colors duration-200 ${
+                isActive 
+                  ? "text-primary" 
+                  : "text-muted-foreground hover:text-primary active:text-primary"
+              }`}
             >
-              <Icon className="h-5 w-5" />
-              <span className="text-[10px] font-medium">{item.label}</span>
+              <Icon className={`h-5 w-5 ${isActive ? "scale-110" : ""} transition-transform duration-200`} />
+              <span className={`text-[10px] font-medium ${isActive ? "font-semibold" : ""}`}>{item.label}</span>
             </a>
+          );
+        })}
           );
         })}
       </div>
