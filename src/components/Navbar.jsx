@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Home, User, Code, FolderKanban, GraduationCap, Mail } from "lucide-react";
-
+import { Home, User, Code, FolderKanban, GraduationCap, Mail, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { scrollToElement } from "@/hooks/useLenis";
 import MobileNav from "./MobileNav";
 
@@ -50,6 +50,13 @@ const Navbar = () => {
             <span className="text-gradient">KV</span>
           </a>
 
+          {/* Resume Button */}
+          <Button variant="hero" size="sm" asChild>
+            <a href="/resume.pdf" download className="flex items-center gap-1.5">
+              <Download className="h-4 w-4" />
+              Resume
+            </a>
+          </Button>
         </div>
       </header>
 
@@ -96,6 +103,9 @@ const Navbar = () => {
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-out group-hover:w-full" />
                 </a>
               ))}
+              <Button variant="hero" size="sm" className="transition-transform duration-300 hover:scale-105" asChild>
+                <a href="/resume.pdf" download>Resume</a>
+              </Button>
             </div>
           </div>
         </div>

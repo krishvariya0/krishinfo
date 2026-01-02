@@ -105,12 +105,6 @@ const Hero = () => {
               Download Resume
             </a>
           </Button>
-          <Button variant="heroOutline" size="lg" className="w-full sm:w-auto transition-transform duration-300 hover:scale-105" asChild>
-            <a href="/cv.pdf" download>
-              <Download className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-              Download CV
-            </a>
-          </Button>
         </motion.div>
 
         {/* Social Links */}
