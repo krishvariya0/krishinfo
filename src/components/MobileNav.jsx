@@ -81,8 +81,6 @@ const MobileNav = () => {
             </a>
           );
         })}
-          );
-        })}
       </div>
     </nav>
   );
