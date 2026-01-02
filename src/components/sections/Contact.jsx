@@ -105,12 +105,6 @@ const Contact = () => {
                 Resume
               </a>
             </Button>
-            <Button variant="heroOutline" size="default" className="w-full sm:w-auto transition-transform duration-300 hover:scale-105" asChild>
-              <a href="/cv.pdf" download>
-                <Download className="mr-2 h-4 w-4" />
-                CV
-              </a>
-            </Button>
           </FadeIn>
         </div>
       </div>
