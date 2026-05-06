@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, MessageCircle, FileText, Users, Heart, Zap } from "lucide-react";
+import { ExternalLink, Github, MessageCircle, FileText, Users, Heart, Zap, FolderKanban } from "lucide-react";
 import { FadeIn, motion, smoothEase } from "@/components/ui/motion";
 import chatzaPreview from "@/assets/chatza-preview.png";
 import fexoraPreview from "@/assets/fexora-preview.png";
@@ -155,18 +155,32 @@ const Projects = () => {
             <p className="text-muted-foreground mb-4 sm:mb-6 text-sm sm:text-base">
               Want to see more of my work?
             </p>
-            <Button variant="heroOutline" size="lg" className="transition-transform duration-300 hover:scale-105" asChild>
-              <a 
-                href="https://github.com/krishvariya0" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center"
-              >
-                <Github className="mr-2 h-5 w-5" />
-                View All Projects
-                <ExternalLink className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+              <Button variant="heroOutline" size="lg" className="w-full sm:w-auto transition-transform duration-300 hover:scale-105" asChild>
+                <a 
+                  href="https://github.com/krishvariya0" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center"
+                >
+                  <Github className="mr-2 h-5 w-5" />
+                  Visit My GitHub
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+              <Button variant="hero" size="lg" className="w-full sm:w-auto transition-transform duration-300 hover:scale-105" asChild>
+                <a 
+                  href="https://github.com/krishvariya0?tab=repositories" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center"
+                >
+                  <FolderKanban className="mr-2 h-5 w-5" />
+                  View All Projects
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </div>
           </div>
         </FadeIn>
       </div>
