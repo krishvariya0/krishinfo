@@ -3,7 +3,7 @@ import { Home, User, Code, FolderKanban, GraduationCap, Mail, Download } from "l
 import { Button } from "@/components/ui/button";
 import { scrollToElement } from "@/hooks/useLenis";
 import MobileNav from "./MobileNav";
-import logo from "@/assets/logo.png";
+
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,10 +46,9 @@ const Navbar = () => {
           <a 
             href="#hero" 
             onClick={(e) => handleNavClick(e, "#hero")}
-            className="flex items-center"
-            aria-label="Krish Variya logo"
+            className="text-xl font-bold"
           >
-            <img src={logo} alt="Krish Variya logo" className="h-9 w-9 object-contain" />
+            <span className="text-gradient">KV</span>
           </a>
 
           {/* Resume Button */}
@@ -76,10 +75,9 @@ const Navbar = () => {
             <a 
               href="#hero" 
               onClick={(e) => handleNavClick(e, "#hero")}
-              className="flex items-center transition-transform duration-300 hover:scale-105"
-              aria-label="Krish Variya logo"
+              className="text-xl font-bold transition-transform duration-300 hover:scale-105"
             >
-              <img src={logo} alt="Krish Variya logo" className="h-11 w-11 object-contain" />
+              <span className="text-gradient">KV</span>
             </a>
 
             {/* Desktop Navigation */}
