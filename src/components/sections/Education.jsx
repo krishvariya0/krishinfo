@@ -55,7 +55,7 @@ const Education = () => {
                     </div>
                     <div className="flex items-center gap-2">
                       <Calendar className="h-4 w-4 flex-shrink-0" />
-                      <span>June 2024 - June 2028</span>
+                      <span>June 2024 - June 2027</span>
                     </div>
                   </div>
 

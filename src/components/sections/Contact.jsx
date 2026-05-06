@@ -7,8 +7,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "variyakrish0@gmail.com",
-      href: "mailto:variyakrish0@gmail.com",
+      value: "hello@krishvariya.me",
+      href: "mailto:hello@krishvariya.me",
     },
     {
       icon: Linkedin,
@@ -94,7 +94,7 @@ const Contact = () => {
           {/* CTA Buttons */}
           <FadeIn delay={0.2} className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <Button variant="hero" size="lg" className="w-full sm:w-auto transition-transform duration-300 hover:scale-105" asChild>
-              <a href="mailto:variyakrish0@gmail.com">
+              <a href="mailto:hello@krishvariya.me">
                 <Send className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 Send Me a Message
               </a>

@@ -163,7 +163,7 @@ const Projects = () => {
                 className="inline-flex items-center"
               >
                 <Github className="mr-2 h-5 w-5" />
-                Visit My GitHub
+                View All Projects
                 <ExternalLink className="ml-2 h-4 w-4" />
               </a>
             </Button>
