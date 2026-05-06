@@ -58,7 +58,7 @@ const Footer = () => {
               <Instagram className="h-4 w-4 sm:h-5 sm:w-5" />
             </motion.a>
             <motion.a
-              href="mailto:variyakrish0@gmail.com"
+              href="mailto:hello@krishvariya.me"
               className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-300"
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
