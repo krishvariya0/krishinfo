@@ -20,33 +20,35 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Krish Variya | Frontend & Full-Stack Developer</title>
+        <title>Krish Variya | Portfolio</title>
         <meta
           name="description"
-          content="Krish Variya - Frontend and Full-Stack Developer specializing in React, Next.js, and TypeScript. Building modern, responsive web applications."
+          content="Welcome to the official portfolio of Krish Variya. Explore my projects, skills, and professional experience."
         />
         <meta
           name="keywords"
-          content="Krish Variya, Web Developer, Frontend Developer, Full-Stack Developer, React, Next.js, TypeScript, Tailwind CSS"
+          content="Krish Variya, Web Developer, Frontend Developer, Full-Stack Developer, React, Next.js, JavaScript, TypeScript, Tailwind CSS, Portfolio"
         />
         <meta name="author" content="Krish Variya" />
-        <link rel="canonical" href="https://krishvariya.dev" />
+        <link rel="canonical" href="https://krishvariya.me" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Krish Variya | Frontend & Full-Stack Developer" />
+        <meta property="og:title" content="Krish Variya | Portfolio" />
         <meta
           property="og:description"
-          content="Building modern, responsive & real-world web applications using React & Next.js"
+          content="Welcome to the official portfolio of Krish Variya. Explore my projects, skills, and professional experience."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://krishvariya.dev" />
+        <meta property="og:url" content="https://krishvariya.me" />
+        <meta property="og:site_name" content="Krish Variya Portfolio" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Krish Variya | Frontend & Full-Stack Developer" />
+        <meta name="twitter:creator" content="@krishvariya" />
+        <meta name="twitter:title" content="Krish Variya | Portfolio" />
         <meta
           name="twitter:description"
-          content="Building modern, responsive & real-world web applications using React & Next.js"
+          content="Welcome to the official portfolio of Krish Variya. Explore my projects, skills, and professional experience."
         />
       </Helmet>
 
