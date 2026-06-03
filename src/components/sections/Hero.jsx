@@ -85,11 +85,23 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5, ease: smoothEase }}
-          className="text-sm sm:text-base md:text-lg lg:text-xl text-secondary-foreground max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2"
+          className="text-sm sm:text-base md:text-lg lg:text-xl text-secondary-foreground max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto mb-2 sm:mb-3 leading-relaxed px-2"
         >
           Building modern, responsive & real-world web applications using{" "}
           <span className="text-primary font-medium">React</span> &{" "}
           <span className="text-primary font-medium">Next.js</span>
+        </motion.p>
+
+        {/* SEO bio — visually hidden but indexable */}
+        <motion.p 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.55, ease: smoothEase }}
+          className="sr-only"
+        >
+          Krish Variya is a Frontend and Full-Stack Developer based in Surat, India, 
+          specializing in React, Next.js, JavaScript, TypeScript, and Tailwind CSS. 
+          Explore my portfolio to see my projects, skills, and professional experience.
         </motion.p>
 
         {/* CTA Buttons */}

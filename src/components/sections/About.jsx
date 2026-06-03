@@ -35,7 +35,7 @@ const About = () => {
           {/* Text Content */}
           <FadeIn direction="up" className="space-y-4 sm:space-y-6">
             <p className="text-base sm:text-lg text-secondary-foreground leading-relaxed">
-              I am currently pursuing a Bachelor of Computer Applications (BCA) at Vivekanand College for Advanced Computer and Information Science, Surat, where I am building a strong foundation in programming, software development, and modern web technologies.
+              <strong className="text-foreground">Krish Variya</strong> is a passionate Frontend and Full-Stack Developer currently pursuing a Bachelor of Computer Applications (BCA) at Vivekanand College for Advanced Computer and Information Science, Surat. I am building a strong foundation in programming, software development, and modern web technologies.
             </p>
             <p className="text-base sm:text-lg text-secondary-foreground leading-relaxed">
               I actively work on <span className="text-primary font-medium">real-world web applications</span> and have a strong interest in frontend and full-stack web development. I have hands-on experience with HTML, CSS, JavaScript, React, Tailwind CSS, and Firebase, focusing on building responsive, user-friendly interfaces and implementing authentication and real-time data handling.
