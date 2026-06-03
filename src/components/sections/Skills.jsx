@@ -1,6 +1,5 @@
 import { 
   SiHtml5, 
-  SiCss,
   SiJavascript, 
   SiTypescript, 
   SiReact, 
@@ -17,6 +16,7 @@ import {
   SiNetlify,
   SiFigma
 } from "react-icons/si";
+import { FileCode2 } from "lucide-react";
 import { FadeIn, motion, smoothEase } from "@/components/ui/motion";
 
 const Skills = () => {
@@ -25,7 +25,7 @@ const Skills = () => {
       title: "Frontend",
       skills: [
         { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
-        { name: "CSS3", icon: SiCss, color: "#1572B6" },
+        { name: "CSS3", icon: FileCode2, color: "#1572B6" },
         { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
         { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
         { name: "React", icon: SiReact, color: "#61DAFB" },
