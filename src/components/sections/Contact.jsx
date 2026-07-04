@@ -25,8 +25,8 @@ const Contact = () => {
     {
       icon: Instagram,
       label: "Instagram",
-      value: "instagram.com/krxsh.in",
-      href: "https://www.instagram.com/krxsh.in/",
+      value: "instagram.com/v.krishhh",
+      href: "https://www.instagram.com/v.krishhh/",
     },
     {
       icon: MapPin,

@@ -48,7 +48,7 @@ const Footer = () => {
               <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
             </motion.a>
             <motion.a
-              href="https://www.instagram.com/krxsh.in/"
+              href="https://www.instagram.com/v.krishhh/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-300"
