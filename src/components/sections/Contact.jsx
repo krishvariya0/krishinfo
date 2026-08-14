@@ -13,8 +13,8 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/krish-variya",
-      href: "https://www.linkedin.com/in/krish-variya",
+      value: "linkedin.com/in/krishvariya",
+      href: "https://www.linkedin.com/in/krishvariya",
     },
     {
       icon: Github,
