@@ -35,5 +35,5 @@ npm run dev
 ## Contact
 
 - GitHub: [krishvariya0](https://github.com/krishvariya0)
-- LinkedIn: [Krish Variya](https://www.linkedin.com/in/krish-variya-5a4b92286/)
+- LinkedIn: [Krish Variya](https://www.linkedin.com/in/krishvariya)
 - Email: krishvariya4@gmail.com

@@ -38,7 +38,7 @@ const Footer = () => {
               <Github className="h-4 w-4 sm:h-5 sm:w-5" />
             </motion.a>
             <motion.a
-              href="https://www.linkedin.com/in/krish-variya"
+              href="https://www.linkedin.com/in/krishvariya"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-300"
