@@ -135,7 +135,11 @@ const Projects = () => {
                       {project.image ? (
                         <img 
                           src={project.image} 
-                          alt={`${project.title} preview`}
+                          alt={`Screenshot of the ${project.title} project by Krish Variya`}
+                          width={1280}
+                          height={720}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover"
                         />
                       ) : (

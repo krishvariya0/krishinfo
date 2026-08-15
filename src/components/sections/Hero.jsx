@@ -127,7 +127,8 @@ const Hero = () => {
           className="flex items-center justify-center gap-3 sm:gap-4"
         >
           <motion.a 
-            href="https://github.com/krishvariya0" 
+            href="https://github.com/krishvariya0"
+              aria-label="Krish Variya on GitHub" 
             target="_blank"
             rel="noopener noreferrer"
             className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-300"
@@ -137,7 +138,8 @@ const Hero = () => {
             <Github className="h-4 w-4 sm:h-5 sm:w-5" />
           </motion.a>
           <motion.a 
-            href="https://www.linkedin.com/in/krishvariya" 
+            href="https://www.linkedin.com/in/krishvariya"
+              aria-label="Krish Variya on LinkedIn" 
             target="_blank" 
             rel="noopener noreferrer"
             className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-300"
@@ -148,6 +150,7 @@ const Hero = () => {
           </motion.a>
           <motion.a 
             href="mailto:hello@krishvariya.me"
+              aria-label="Email Krish Variya"
             className="p-2.5 sm:p-3 rounded-full bg-secondary/50 border border-border hover:border-primary/50 hover:bg-secondary transition-all duration-300"
             whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.95 }}
