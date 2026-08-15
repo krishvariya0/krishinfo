@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Helmet } from "react-helmet-async";
 import { useLenis } from "@/hooks/useLenis";
 import LoadingScreen from "@/components/LoadingScreen";
 import Navbar from "@/components/Navbar";
