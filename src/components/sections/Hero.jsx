@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion, smoothEase } from "@/components/ui/motion";
-import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Download, Github, Linkedin, Mail, Sparkles } from "lucide-react";
 import { scrollToElement } from "@/hooks/useLenis";
 
 const Hero = () => {
@@ -77,8 +77,22 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.4, ease: smoothEase }}
           className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-3 sm:mb-4 font-mono"
         >
-          Frontend / Full-Stack Developer
+          Full-Stack Developer
         </motion.p>
+
+        {/* Current career step */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.45, ease: smoothEase }}
+          className="mb-4 sm:mb-6"
+        >
+          <span className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-secondary/50 border border-border text-xs sm:text-sm text-muted-foreground">
+            <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary" />
+            Currently learning &amp; building toward becoming an AI Engineer
+          </span>
+        </motion.div>
+
 
         {/* Tagline */}
         <motion.p 
@@ -99,7 +113,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.55, ease: smoothEase }}
           className="sr-only"
         >
-          Krish Variya is a Frontend and Full-Stack Developer based in Surat, India, 
+          Krish Variya is a Full-Stack Developer based in Surat, India, 
           specializing in React, Next.js, JavaScript, TypeScript, and Tailwind CSS. 
           Explore my portfolio to see my projects, skills, and professional experience.
         </motion.p>

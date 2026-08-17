@@ -122,7 +122,7 @@ const LoadingScreen = ({ onComplete }) => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 1.8, ease: smoothEase }}
             >
-              Frontend / Full-Stack Developer
+              Full-Stack Developer
             </motion.p>
           </div>
         </motion.div>

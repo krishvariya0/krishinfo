@@ -1,6 +1,6 @@
 # Krish Variya - Portfolio
 
-Personal portfolio website showcasing my projects and skills as a Frontend Developer.
+Personal portfolio website showcasing my projects and skills as a Full-Stack Developer.
 
 ## Technologies Used
 
