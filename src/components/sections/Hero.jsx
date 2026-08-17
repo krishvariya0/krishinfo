@@ -77,7 +77,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.4, ease: smoothEase }}
           className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-3 sm:mb-4 font-mono"
         >
-          Frontend / Full-Stack Developer
+          Full-Stack Developer
         </motion.p>
 
         {/* Tagline */}
@@ -99,7 +99,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.55, ease: smoothEase }}
           className="sr-only"
         >
-          Krish Variya is a Frontend and Full-Stack Developer based in Surat, India, 
+          Krish Variya is a Full-Stack Developer based in Surat, India, 
           specializing in React, Next.js, JavaScript, TypeScript, and Tailwind CSS. 
           Explore my portfolio to see my projects, skills, and professional experience.
         </motion.p>
