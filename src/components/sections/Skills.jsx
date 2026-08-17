@@ -5,6 +5,8 @@ import {
   SiReact, 
   SiNextdotjs, 
   SiTailwindcss, 
+  SiPhp,
+  SiPython,
   SiFirebase, 
   SiMongodb,
   SiPostgresql,
@@ -36,6 +38,8 @@ const Skills = () => {
     {
       title: "Backend / Databases",
       skills: [
+        { name: "PHP", icon: SiPhp, color: "#777BB4" },
+        { name: "Python", icon: SiPython, color: "#3776AB" },
         { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
         { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
         { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },

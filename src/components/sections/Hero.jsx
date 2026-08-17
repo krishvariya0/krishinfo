@@ -80,6 +80,20 @@ const Hero = () => {
           Full-Stack Developer
         </motion.p>
 
+        {/* Current career step */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.45, ease: smoothEase }}
+          className="mb-4 sm:mb-6"
+        >
+          <span className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-secondary/50 border border-border text-xs sm:text-sm text-muted-foreground">
+            <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary" />
+            Currently learning &amp; building toward becoming an AI Engineer
+          </span>
+        </motion.div>
+
+
         {/* Tagline */}
         <motion.p 
           initial={{ opacity: 0, y: 30 }}
