@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion, smoothEase } from "@/components/ui/motion";
-import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Download, Github, Linkedin, Mail, Sparkles } from "lucide-react";
 import { scrollToElement } from "@/hooks/useLenis";
 
 const Hero = () => {
