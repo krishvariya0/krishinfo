@@ -174,7 +174,7 @@ const Projects = () => {
               </Button>
               <Button variant="hero" size="lg" className="w-full sm:w-auto transition-transform duration-300 hover:scale-105" asChild>
                 <a 
-                  href="https://github.com/krishvariya0?tab=repositories" 
+                  href="https://projects.krishvariya.me" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center"
