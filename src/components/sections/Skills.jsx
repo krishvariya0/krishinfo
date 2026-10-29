@@ -53,6 +53,7 @@ const SkillCard = ({ skill, skillIndex, details }) => {
       <button
         type="button"
         aria-expanded={isOpen}
+        aria-controls={detailsId}
         aria-describedby={isOpen ? detailsId : undefined}
         onClick={() => {
           if (window.matchMedia("(hover: none)").matches) {
