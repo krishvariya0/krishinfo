@@ -16,7 +16,8 @@ import {
   SiGithub, 
   SiVercel, 
   SiNetlify,
-  SiFigma
+  SiFigma,
+  SiDocker
 } from "react-icons/si";
 import { FileCode2 } from "lucide-react";
 import { FadeIn, motion, smoothEase } from "@/components/ui/motion";
@@ -53,6 +54,7 @@ const Skills = () => {
         { name: "Git", icon: SiGit, color: "#F05032" },
         { name: "GitHub", icon: SiGithub, color: "#ffffff" },
         { name: "Figma", icon: SiFigma, color: "#F24E1E" },
+        { name: "Docker", icon: SiDocker, color: "#2496ED" },
         { name: "Vercel", icon: SiVercel, color: "#ffffff" },
         { name: "Netlify", icon: SiNetlify, color: "#00C7B7" },
       ]
