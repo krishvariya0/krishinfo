@@ -8,7 +8,13 @@
     <meta name="author" content="Krish Variya" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#0b0d10" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Krish Variya" />
     <link rel="canonical" href="https://info.krishvariya.me/" />
+    <link rel="alternate" hreflang="en-in" href="https://info.krishvariya.me/" />
 
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="Krish Variya — Full-Stack Developer" />
@@ -16,6 +22,9 @@
     <meta property="og:url" content="https://info.krishvariya.me/" />
     <meta property="og:site_name" content="Krish Variya" />
     <meta property="og:locale" content="en_US" />
+    <meta property="profile:first_name" content="Krish" />
+    <meta property="profile:last_name" content="Variya" />
+    <meta property="profile:username" content="krishvariya0" />
     <meta property="og:image" content="https://info.krishvariya.me/og-image.png" />
     <meta property="og:image:secure_url" content="https://info.krishvariya.me/og-image.png" />
     <meta property="og:image:type" content="image/png" />
@@ -50,7 +59,12 @@
           "isPartOf": { "@id": "https://info.krishvariya.me/#website" },
           "about": { "@id": "https://info.krishvariya.me/#person" },
           "mainEntity": { "@id": "https://info.krishvariya.me/#person" },
-          "primaryImageOfPage": "https://info.krishvariya.me/og-image.png",
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://info.krishvariya.me/og-image.png",
+            "width": 1200,
+            "height": 630
+          },
           "inLanguage": "en"
         },
         {
@@ -58,7 +72,11 @@
           "@id": "https://info.krishvariya.me/#person",
           "name": "Krish Variya",
           "url": "https://info.krishvariya.me/",
-          "image": "https://info.krishvariya.me/krish-variya.jpg",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://info.krishvariya.me/krish-variya.jpg",
+            "caption": "Krish Variya, Full-Stack Developer"
+          },
           "jobTitle": "Full-Stack Developer",
           "description": "Full-Stack Developer specializing in React, Next.js, JavaScript, TypeScript, Tailwind CSS, PHP and Python, and currently learning AI engineering. Building modern, responsive web applications.",
           "address": {
@@ -85,6 +103,19 @@
 
   <body>
     <div id="root"></div>
+    <noscript>
+      <main>
+        <h1>Krish Variya — Full-Stack Developer</h1>
+        <p>
+          Krish Variya is a Full-Stack Developer in Surat, India, specializing in
+          React, Next.js, JavaScript, TypeScript, Tailwind CSS, PHP and Python.
+        </p>
+        <p>
+          Explore projects, skills and professional experience at
+          info.krishvariya.me.
+        </p>
+      </main>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

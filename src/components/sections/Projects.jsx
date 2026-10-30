@@ -40,12 +40,12 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
+    <section id="projects" aria-labelledby="projects-heading" className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
       <div className="section-container">
         {/* Section Header */}
         <FadeIn className="text-center mb-10 sm:mb-12 lg:mb-16">
           <span className="text-primary font-mono text-xs sm:text-sm mb-3 sm:mb-4 block">03. Projects</span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
+          <h2 id="projects-heading" className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
             Featured <span className="text-gradient">Work</span>
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
