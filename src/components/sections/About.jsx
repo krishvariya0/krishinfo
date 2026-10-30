@@ -21,12 +21,12 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
+    <section id="about" aria-labelledby="about-heading" className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
       <div className="section-container">
         {/* Section Header */}
         <FadeIn className="text-center mb-10 sm:mb-12 lg:mb-16">
           <span className="text-primary font-mono text-xs sm:text-sm mb-3 sm:mb-4 block">01. About Me</span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
+          <h2 id="about-heading" className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
             Passionate Developer & <span className="text-gradient">Problem Solver</span>
           </h2>
         </FadeIn>

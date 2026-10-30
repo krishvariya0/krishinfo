@@ -18,12 +18,17 @@ const Index = () => {
 
   return (
     <>
-
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+      >
+        Skip to content
+      </a>
 
       {/* Loading Screen with Lenis-inspired animations */}
       <LoadingScreen onComplete={() => setIsLoading(false)} />
 
-      <main className="min-h-screen bg-background">
+      <main id="main-content" className="min-h-screen bg-background">
         <Navbar />
         <Hero />
         <About />
